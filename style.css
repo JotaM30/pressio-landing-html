@@ -1,0 +1,319 @@
+:root {
+  --azul-esc: #111844;
+  --azul-med: #4b5694;
+  --azul-cla: #7288ae;
+  --branco: #eae0cf;
+
+  --titulo: "Playfair Display";
+  --subTitulo: "Lato";
+  --texto: "Montserratt"
+}
+
+/* 1. Remove margens e padding de todos os elementos e define box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Suaviza a rolagem da página */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3. Ajusta o corpo da página para ocupar a tela inteira e melhorar renderização de texto */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 4. Imagens e mídias responsivas por padrão */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Herança de fonte para elementos de formulário */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Remove estilos de botão padrão e adiciona cursor pointer */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* 7. Remove estilo padrão de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 8. Estilo base para links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Classes Padronizadas */
+.titulo {
+  font-family: var(--titulo);
+  font-size: 180px;
+  font-style: italic;
+  color: var(--branco);
+  line-height: 190px;
+}
+
+.sub {
+  font-family: var(--subTitulo);
+  font-size: 45px;
+  color: var(--branco);
+}
+
+.titulo-cla {
+  font-family: var(--titulo);
+  font-size: 100px;
+  color: var(--branco);
+  line-height: 110px;
+  margin-bottom:20px;
+}
+
+.titulo-esc {
+  font-family: var(--titulo);
+  font-size: 100px;
+  color: var(--azul-med);
+  line-height: 110px;
+  margin-bottom:20px;
+}
+
+.sub-cla {
+  font-family: var(--subTitulo);
+  font-size: 35px;
+  color: var(--branco);
+}
+
+.sub-esc {
+  font-family: var(--subTitulo);
+  font-size: 35px;
+  color: var(--azul-med);
+}
+
+.texto-cla {
+  font-family: var(--texto);
+  font-size: 35px;
+  color: var(--branco);
+}
+
+.texto-esc {
+  font-family: var(--texto);
+  font-size: 35px;
+  color: var(--azul-med);
+}
+
+/* Configs  */
+
+/* INICIO */
+.introBox {
+  background-image: linear-gradient(to bottom, var(--azul-esc), var(--azul-med));
+  padding: 40px 80px;
+}
+
+header {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin-bottom: 100px;
+}
+
+header::after {
+  position: absolute;
+  bottom: -24%;
+  content: "";
+  display: block;
+  width: 60%;
+  height: 5px;
+  background-color: var(--branco);
+  border-radius: 2px;
+}
+
+/* DESAFIO */
+#desafio {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 23px;
+justify-content: center;
+align-items: center;
+margin-bottom: 40px;
+}
+
+.desafioBox {
+  padding: 20px 24px;
+  background-color: var(--azul-esc);
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.adendo {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* COMO FUNCIONA */
+#comoFunciona {
+  display: grid;
+  padding: 60px 80px;
+  background-color: var(--branco);
+}
+
+#comoFunciona .titulo-esc {
+  text-align: center;
+}
+
+#comoFunciona .container {
+  position: relative;
+}
+
+#comoFunciona .container .box {
+  position: relative;
+  padding: 20px 40px;
+  margin: 30px;
+  background-color: var(--azul-med);
+  border-radius: 15px;
+  z-index: 2;
+}
+
+#comoFunciona .container .box p.sub-cla {
+  text-align: center;
+}
+
+#comoFunciona .container .bolinhas{
+  position: absolute;
+  bottom: 0px;
+  left: -17px;
+  width: 200px;
+  height: 146px;
+  background-image: url("../public/bolinhas.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* PARA QUEM É? */
+#paraQuemE {
+  padding: 60px 80px;
+  background-color: var(--azul-med);
+}
+
+#paraQuemE .titulo-cla {
+  text-align: end;
+  margin-bottom: 60px;
+}
+
+#paraQuemE .box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0px 20px;
+  gap: 15px;
+  align-items: center;
+  text-align: center;
+  border: var(--branco) solid 4px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+
+  .sub-cla,
+  .texto-cla {
+    font-size: 40px;
+  }
+}
+
+#paraQuemE .box:nth-child(odd) {
+  grid-template-columns: 1fr auto;
+}
+
+#paraQuemE .box img {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+/* DIFERENCIAIS */
+#diferenciais {
+  padding: 60px 80px;
+  padding-top: 0px;
+  background-color: var(--azul-med);
+}
+
+#diferenciais .titulo-cla {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+#diferenciais i {
+  font-size: 50px;
+}
+
+#diferenciais i.fa-x {
+  color: red;
+}
+
+#diferenciais i.fa-check {
+  color: rgb(0, 255, 0);
+}
+
+#diferenciais .container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--branco);
+  padding: 40px 60px;
+  border-radius: 15px;
+}
+
+#diferenciais .container div {
+  position: relative;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin: auto 0px;
+}
+
+#diferenciais .container div::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  height: 3px;
+  width: 80%;
+  background-color: var(--azul-med);
+}
+
+#diferenciais .container div:nth-last-child(-n+5):after {
+  display: none;
+}
+
+/* FOOTER */
+footer {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 30px;
+  padding: 40px 80px;
+  background-color: var(--azul-esc);
+  color: var(--branco);
+}
